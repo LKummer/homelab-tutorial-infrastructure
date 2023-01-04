@@ -1,0 +1,9 @@
+---
+plugin: lkummer.homelab.terraform_local
+tfstate_path: ../terraform/terraform.tfstate
+hosts:
+  - ansible_host: '{{ ssh_ip }}'
+    ansible_group: tutorial
+    ansible_port: '2222'
+    vars:
+      ansible_user: '{{ ssh_user }}'

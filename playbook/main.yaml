@@ -1,0 +1,17 @@
+---
+- name: Configure Kubernetes cluster
+  hosts: tutorial
+  roles:
+    - role: lkummer.homelab.k3s
+      vars:
+        k3s_version: v1.24.3+k3s1
+    - role: lkummer.homelab.prometheus
+      vars:
+        prometheus_grafana_host: grafana.example.com
+        prometheus_grafana_user: admin
+        # Use Ansible Vault for actual secrets!
+        prometheus_grafana_password: admin
+    - role: lkummer.homelab.argo
+      vars:
+        argo_host: argo.example.com
+        argo_cert_manager_enabled: false
