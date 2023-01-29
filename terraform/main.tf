@@ -7,7 +7,7 @@ module "tutorial" {
 
   proxmox_api_url     = var.proxmox_api_url
   proxmox_target_node = var.proxmox_target_node
-  proxmox_template    = "alpine-3.17.0-1"
+  proxmox_template    = "alpine-3.17.1-1"
 
   name                   = "tutorial-machine"
   description            = "Created from tutorial example."
