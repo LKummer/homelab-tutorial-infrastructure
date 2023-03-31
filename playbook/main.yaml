@@ -3,13 +3,18 @@
   hosts: tutorial
   roles:
     - role: lkummer.homelab.k3s
-    - role: lkummer.homelab.prometheus
+    - role: lkummer.homelab.cert_manager
       vars:
-        prometheus_grafana_host: grafana.example.com
-        prometheus_grafana_user: admin
+        cert_manager_cloudflare_email: you@example.com
         # Use Ansible Vault for actual secrets!
-        prometheus_grafana_password: admin
+        cert_manager_cloudflare_token: REDACTED
+        cert_manager_cloudflare_zone: example.com
+    - role: lkummer.homelab.observability
+      vars:
+        observability_grafana_host: grafana.example.com
+        observability_grafana_user: admin
+        # Use Ansible Vault for actual secrets!
+        observability_grafana_password: admin
     - role: lkummer.homelab.argo
       vars:
         argo_host: argo.example.com
-        argo_cert_manager_enabled: false

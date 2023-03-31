@@ -3,11 +3,11 @@ terraform {
 }
 
 module "tutorial" {
-  source = "github.com/LKummer/terraform-proxmox//modules/machine?ref=1.0.0"
+  source = "github.com/LKummer/terraform-proxmox//modules/machine?ref=2.0.1"
 
   proxmox_api_url     = var.proxmox_api_url
   proxmox_target_node = var.proxmox_target_node
-  proxmox_template    = "alpine-3.17.1-1"
+  proxmox_template    = "alpine-3.17.3-1"
 
   name                   = "tutorial-machine"
   description            = "Created from tutorial example."

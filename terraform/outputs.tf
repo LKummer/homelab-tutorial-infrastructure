@@ -1,5 +1,5 @@
 output "ssh_ip" {
-  value       = module.tutorial.ssh_ip
+  value       = module.tutorial.ip
   description = "IP of the created virtual machine."
 }
 
