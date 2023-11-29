@@ -3,4 +3,4 @@ collections:
   - name: lkummer.homelab
     type: git
     source: https://github.com/LKummer/ansible-collection-homelab.git
-    version: 4.0.1
+    version: 6.0.0
