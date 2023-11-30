@@ -174,5 +174,5 @@ CI variables required for the pipeline:
 
 * `PM_API_TOKEN_ID` ID of the form `user@pve!token`
 * `PM_API_TOKEN_SECRET` secret of the ID stored in `PM_API_TOKEN_ID`
-* `SSH_PRIVATE_KEY_FILE` (file variable) private key in OpenSSH format, **make sure it ends with an empty line**
-* `SSH_PUBLIC_KEY` public key of the key stored in `SSH_PRIVATE_KEY_FILE`
+* `SSH_PRIVATE_KEY_FILE` (file) (protected) private key in OpenSSH format, **make sure it ends with an empty line**
+* `SSH_PUBLIC_KEY` (protected) public key of the key stored in `SSH_PRIVATE_KEY_FILE`
