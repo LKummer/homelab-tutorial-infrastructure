@@ -48,7 +48,6 @@ cache:
   before_script:
     - apt-get update
     - apt-get install --yes git
-    - chmod 600 "$SSH_PRIVATE_KEY_FILE"
     - cd "$PLAYBOOK_ROOT"
     - pip install -r requirements.txt
     - ansible-galaxy install -r requirements.yaml
@@ -112,6 +111,7 @@ apply-playbook:
     name: $TF_STATE_NAME
     action: prepare
   script:
+    - chmod 600 "$SSH_PRIVATE_KEY_FILE"
     - ansible-playbook --key-file "$SSH_PRIVATE_KEY_FILE" --inventory=inventory main.yaml
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
