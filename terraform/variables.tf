@@ -8,8 +8,14 @@ variable "proxmox_target_node" {
   type        = string
 }
 
-variable "cloud_init_public_keys" {
-  description = "SSH public keys to add with Cloud Init."
+variable "authorized_keys" {
+  description = "SSH public keys to authorize."
+  type        = string
+  default     = ""
+}
+
+variable "provisioning_authorized_keys" {
+  description = "SSH public keys to authorize, used for adding the provisioning key separately."
   type        = string
   default     = ""
 }

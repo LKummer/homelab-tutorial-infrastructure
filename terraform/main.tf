@@ -17,5 +17,5 @@ module "tutorial" {
   cores                  = 4
   disk_pool              = "local-lvm"
   disk_size              = "10G"
-  cloud_init_public_keys = var.cloud_init_public_keys
+  cloud_init_public_keys = "${var.authorized_keys}\n${var.provisioning_authorized_keys}"
 }
