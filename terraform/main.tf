@@ -13,7 +13,7 @@ module "tutorial" {
   name                   = "tutorial-machine"
   description            = "Created from tutorial example."
   on_boot                = true
-  memory                 = 1024 * 6
+  memory                 = 1024 * 8
   cores                  = 4
   disk_pool              = "local-lvm"
   disk_size              = "10G"
