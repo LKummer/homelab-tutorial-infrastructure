@@ -2,7 +2,6 @@ stages:
   - validate
   - build
   - deploy
-  - cleanup
 
 variables:
   TF_ROOT: terraform
@@ -97,6 +96,7 @@ apply-terraform:
   environment:
     name: $TF_STATE_NAME
     action: start
+    on_stop: destroy-terraform
   script:
     - terraform apply -input=false "$TF_PLAN"
   rules:
@@ -116,7 +116,7 @@ apply-playbook:
 
 destroy-terraform:
   extends: .terraform
-  stage: cleanup
+  stage: deploy
   environment:
     name: $TF_STATE_NAME
     action: stop
