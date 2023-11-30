@@ -95,7 +95,6 @@ apply-terraform:
   environment:
     name: $TF_STATE_NAME
     action: start
-    on_stop: destroy-terraform
   script:
     - terraform apply -input=false "$TF_PLAN"
   rules:
@@ -115,15 +114,3 @@ apply-playbook:
     - ansible-playbook --key-file "$SSH_PRIVATE_KEY_FILE" --inventory=inventory main.yaml
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-
-destroy-terraform:
-  extends: .terraform
-  stage: deploy
-  environment:
-    name: $TF_STATE_NAME
-    action: stop
-  script:
-    - terraform destroy -input=false -auto-approve
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      when: manual
