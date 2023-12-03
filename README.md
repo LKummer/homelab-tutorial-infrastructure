@@ -156,7 +156,7 @@ Lint the Ansible playbook:
 (still in `playbook` directory)
 
 ```
-ansible-lint -P production
+ansible-lint main.yaml
 ```
 
 ## Configure with Ansible
