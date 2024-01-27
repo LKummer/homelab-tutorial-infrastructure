@@ -4,7 +4,7 @@ terraform {
 }
 
 module "tutorial" {
-  source = "github.com/LKummer/terraform-proxmox//modules/machine?ref=4.0.0"
+  source = "github.com/LKummer/terraform-proxmox//modules/machine?ref=4.0.1"
 
   proxmox_api_url  = var.proxmox_api_url
   proxmox_template = "alpine-3.18.5-2"
