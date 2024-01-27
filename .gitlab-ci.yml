@@ -19,7 +19,7 @@ cache:
   image: debian:bookworm-slim
   variables:
     TF_VERSION: 1.6.5
-    TF_VAR_provisioning_authorized_keys: $SSH_PUBLIC_KEY
+    TF_VAR_provisioning_authorized_key: $SSH_PUBLIC_KEY
     TF_HTTP_ADDRESS: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/terraform/state/${TF_STATE_NAME}
     TF_HTTP_LOCK_ADDRESS: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/terraform/state/${TF_STATE_NAME}/lock
     TF_HTTP_LOCK_METHOD: POST

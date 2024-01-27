@@ -10,11 +10,11 @@ variable "proxmox_target_node" {
 
 variable "authorized_keys" {
   description = "SSH public keys to authorize."
-  type        = string
-  default     = ""
+  type        = list(string)
+  default     = []
 }
 
-variable "provisioning_authorized_keys" {
+variable "provisioning_authorized_key" {
   description = "SSH public keys to authorize, used for adding the provisioning key separately."
   type        = string
   default     = ""
